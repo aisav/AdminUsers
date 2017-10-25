@@ -15,6 +15,6 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return "you are an administrator.";
+        return "Hello admin jan";
     }
 }
