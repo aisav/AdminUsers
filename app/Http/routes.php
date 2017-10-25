@@ -43,3 +43,5 @@ Route::get('/authenticateThUserFromForm',function (){
 Route::get('/admin/user/roles',['middleware'=>['role', 'auth'], function(){
     return "Middlware Role";
 }]);
+
+Route::get('/admin', 'AdminController@index');
