@@ -23,4 +23,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public  function role() {
+
+//        The model that calls $this->belongsTo() is the owned model in one-to-one and many-to-one relationships
+// and holds the key of the owning model.
+        return $this->belongsTo('App\Role');
+    }
+
+    public function isAdmin(){
+
+
+        if ($this->role()->name == 'administrator'){
+            return true;
+        }
+        return false;
+    }
 }

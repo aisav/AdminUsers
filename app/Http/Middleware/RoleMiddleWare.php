@@ -15,7 +15,9 @@ class RoleMiddleWare
      */
     public function handle($request, Closure $next)
     {
+//        before
         return $next($request);
+//        after
 //        return redirect('/');
 
     }

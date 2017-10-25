@@ -40,6 +40,6 @@ Route::get('/authenticateThUserFromForm',function (){
 });
 
 
-Route::get('admin/user/roles',['middleware'=>['role', 'auth'], function(){
+Route::get('/admin/user/roles',['middleware'=>['role', 'auth'], function(){
     return "Middlware Role";
 }]);
