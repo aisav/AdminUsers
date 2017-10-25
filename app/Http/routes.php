@@ -38,3 +38,8 @@ Route::get('/authenticateThUserFromForm',function (){
     else return "That user is NOT exist";
 
 });
+
+
+Route::get('admin/user/roles',['middleware'=>['role', 'auth'], function(){
+    return "Middlware Role";
+}]);
