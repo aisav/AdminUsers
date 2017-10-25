@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,21 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/isAuthentacated', function () {
+    if(Auth::check()) {
+        return "The user is logged in.";
+    }
+});
+
+
+Route::get('/authenticateThUserFromForm',function (){
+    $username = "a@a.a";
+    $password = "123456";
+    if(Auth::attempt(['email'=> $username, 'password'=> $password])) {
+        return "That user is exist";
+//        return redirect()->intended();
+    }
+    else return "That user is NOT exist";
+
+});
