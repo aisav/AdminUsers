@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
@@ -35,13 +39,15 @@ Route::get('/authenticateThUserFromForm',function (){
         return "That user is exist";
 //        return redirect()->intended();
     }
-    else return "That user is NOT exist";
+    return "That user is NOT exist";
 
 });
 
 
-Route::get('/admin/user/roles',['middleware'=>['role', 'auth'], function(){
+Route::get('/adminOld/user/roles',['middleware'=>['role', 'auth'], function(){
     return "Middlware Role";
 }]);
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/adminOld', 'AdminController@index');
+
+Route::resource('admin/users', 'AdminUsersController');
