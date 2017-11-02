@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Home</a>
+            <a class="navbar-brand" href="/admin">Home</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -78,7 +78,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{route('admin.users.index')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>

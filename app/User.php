@@ -39,4 +39,11 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public  function photo() {
+
+//        The model that calls $this->belongsTo() is the owned model in one-to-one and many-to-one relationships
+// and holds the key of the owning model.
+        return $this->belongsTo('App\Photo');
+    }
 }
