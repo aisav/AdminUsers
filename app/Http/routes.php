@@ -17,13 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index');
+
+Route::auth();
+
+Route::group(['middleware'=>'isAdmin'], function() {
+    Route::resource('admin/users', 'AdminUsersController');
+});
+
 Route::get('/admin', function () {
     return view('admin.index');
 });
 
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
 
 Route::get('/isAuthentacated', function () {
     if(Auth::check()) {
@@ -50,4 +56,5 @@ Route::get('/adminOld/user/roles',['middleware'=>['role', 'auth'], function(){
 
 Route::get('/adminOld', 'AdminController@index');
 
-Route::resource('admin/users', 'AdminUsersController');
+
+
