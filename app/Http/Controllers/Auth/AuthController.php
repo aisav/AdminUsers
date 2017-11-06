@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+
+//    protected $redirectPath = '/admin';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -68,5 +70,14 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function authenticated($request, $user)
+    {
+        if($user->role->name === 'administrator') {
+            return redirect()->intended('/admin');
+        }
+
+        return redirect()->intended('/home');
     }
 }

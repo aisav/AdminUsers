@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in dear {{$user->name}} !
+                    Dear {{$user->name}} you have not admin role, for this app please login as admin !
                 </div>
             </div>
         </div>

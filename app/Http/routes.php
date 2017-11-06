@@ -29,7 +29,7 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
-
+/*
 
 Route::get('/isAuthentacated', function () {
     if(Auth::check()) {
@@ -54,7 +54,7 @@ Route::get('/adminOld/user/roles',['middleware'=>['role', 'auth'], function(){
     return "Middlware Role";
 }]);
 
-Route::get('/adminOld', 'AdminController@index');
+Route::get('/adminOld', 'AdminController@index');*/
 
 
 

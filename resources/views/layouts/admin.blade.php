@@ -78,7 +78,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="{{route('admin.users.index')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>

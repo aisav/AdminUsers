@@ -2,7 +2,7 @@
 
 @section('content')
     @if(Session::has('deleted_user'))
-        <p class="bg-danger>">{{Session::get('deleted_user')}}</p>
+        <p class="bg-info">{{Session::get('deleted_user')}}</p>
     @endif
     <h1>Users</h1>
     <table class=" table">
